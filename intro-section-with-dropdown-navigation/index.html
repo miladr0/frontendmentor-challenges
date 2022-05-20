@@ -1,75 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="container header">
-    <div class="navigation-wrapper">
-      <h1 class="header__logo">Snap</h1>
-      <nav class="main-menu">
-        <ul class="navigation__container">
-          <li class="navigation-item" id="menu-1"><a  href="#">Features <span class="arrow-wrapper"><object data="./images/icon-arrow-down.svg"></object></span>
-          </a>
-          <ul class="sub-menu-1">
-            <li><a class="sub__menu-item" href="#"><span><object data="./images/icon-todo.svg" type=""></object></span>Todo</a></li>
-            <li><a class="sub__menu-item" href="#"><span><object data="./images/icon-calendar.svg" type=""></object></span>Calendar</a></li>
-            <li><a class="sub__menu-item" href="#"><span><object data="./images/icon-reminders.svg" type=""></object></span>Reminders</a></li>
-            <li><a class="sub__menu-item" href="#"><span><object data="./images/icon-planning.svg" type=""></object></span>Planing</a></li>
-          </ul></li>
-          <li id="menu-2"><a class="navigation-item" href="#">Company <span class="arrow-wrapper"><object data="./images/icon-arrow-down.svg" alt=""></object></span></a>
-            <ul class="sub-menu-2">
-              <li><a class="sub__menu-item" href="#">History</a></li>
-              <li><a class="sub__menu-item" href="#">Out Team</a></li>
-              <li><a class="sub__menu-item" href="#">blog</a></li>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link
+      rel="preload"
+      href="style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+  </head>
+  <body>
+    <header class="container header">
+      <div class="navigation-wrapper">
+        <div class="logo-with-mobile-menu-wrapper">
+          <h1 class="header__logo">Snap</h1>
+          <nav class="main-menu">
+            <ul class="navigation__container">
+              <li class="navigation-item" id="menu-1">
+                <a href="#"
+                  >Features
+                  <span class="arrow-wrapper"
+                    ><object data="./images/icon-arrow-down.svg"></object
+                  ></span>
+                </a>
+                <ul class="sub-menu-1">
+                  <li>
+                    <a class="sub__menu-item" href="#"
+                      ><span
+                        ><object
+                          data="./images/icon-todo.svg"
+                          type=""
+                        ></object></span
+                      >Todo</a
+                    >
+                  </li>
+                  <li>
+                    <a class="sub__menu-item" href="#"
+                      ><span
+                        ><object
+                          data="./images/icon-calendar.svg"
+                          type=""
+                        ></object></span
+                      >Calendar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="sub__menu-item" href="#"
+                      ><span
+                        ><object
+                          data="./images/icon-reminders.svg"
+                          type=""
+                        ></object></span
+                      >Reminders</a
+                    >
+                  </li>
+                  <li>
+                    <a class="sub__menu-item" href="#"
+                      ><span
+                        ><object
+                          data="./images/icon-planning.svg"
+                          type=""
+                        ></object></span
+                      >Planing</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li id="menu-2">
+                <a class="navigation-item" href="#"
+                  >Company
+                  <span class="arrow-wrapper"
+                    ><object
+                      data="./images/icon-arrow-down.svg"
+                      alt=""
+                    ></object></span
+                ></a>
+                <ul class="sub-menu-2">
+                  <li><a class="sub__menu-item" href="#">History</a></li>
+                  <li><a class="sub__menu-item" href="#">Out Team</a></li>
+                  <li><a class="sub__menu-item" href="#">blog</a></li>
+                </ul>
+              </li>
+              <li><a class="navigation-item" href="#">Careers</a></li>
+              <li><a class="navigation-item" href="#">About</a></li>
             </ul>
+          </nav>
+
+          <button
+            class="menu-button hide-on-small"
+            id="open-mobile-menu"
+            aria-label="open menu"
+          >
+            <img src="./images/icon-menu.svg" alt="" />
+          </button>
+        </div>
+
+        <!-- responsive menu -->
+        <div class="navigation__mobile-wrapper" id="mobile-wrapper">
+          <ul class="navigation__mobile">
+            <div class="close-button-wrapper">
+              <button
+                class="menu-button"
+                id="close-mobile-menu"
+                aria-label="close menu"
+              >
+                <img src="./images/icon-close-menu.svg" alt="" />
+              </button>
+            </div>
+
+            <li class="navigation__mobile-item" id="mobile-menu-1">
+              <a href="#"
+                >Features
+                <span class="arrow-wrapper"
+                  ><object data="./images/icon-arrow-down.svg"></object
+                ></span>
+              </a>
+              <ul class="mobile-sub-menu-1">
+                <li>
+                  <a class="mobile__sub__menu-item" href="#"
+                    ><span
+                      ><object
+                        data="./images/icon-todo.svg"
+                        type=""
+                      ></object></span
+                    >Todo</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile__sub__menu-item" href="#"
+                    ><span
+                      ><object
+                        data="./images/icon-calendar.svg"
+                        type=""
+                      ></object></span
+                    >Calendar</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile__sub__menu-item" href="#"
+                    ><span
+                      ><object
+                        data="./images/icon-reminders.svg"
+                        type=""
+                      ></object></span
+                    >Reminders</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile__sub__menu-item" href="#"
+                    ><span
+                      ><object
+                        data="./images/icon-planning.svg"
+                        type=""
+                      ></object></span
+                    >Planing</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="navigation__mobile-item" id="mobile-menu-2">
+              <a href="#"
+                >Company
+                <span class="arrow-wrapper"
+                  ><object
+                    data="./images/icon-arrow-down.svg"
+                    alt=""
+                  ></object></span
+              ></a>
+              <ul class="mobile-sub-menu-2">
+                <li><a class="mobile__sub__menu-item" href="#">History</a></li>
+                <li><a class="mobile__sub__menu-item" href="#">Out Team</a></li>
+                <li><a class="mobile__sub__menu-item" href="#">blog</a></li>
+              </ul>
+            </li>
+            <li><a class="navigation-item" href="#">Careers</a></li>
+            <li><a class="navigation-item" href="#">About</a></li>
+
+            <div class="mobile-header__cta">
+              <a href="#">Login</a>
+              <a
+                href="#"
+                class="border-2 padding-10-15 radius-15 mobile-full-width"
+                >Register</a
+              >
+            </div>
+          </ul>
+        </div>
+        <!-- //  end responsive menu -->
+      </div>
+
+      <div class="header__cta">
+        <a href="#">Login</a>
+        <a href="#" class="border-2 padding-10-15 radius-15">Register</a>
+      </div>
+    </header>
+
+    <section class="container info">
+      <article class="hero__content">
+        <h2 class="hero__content-title">
+          <span class="full-block">Make</span> remote work
+        </h2>
+
+        <p class="hero__content-message">
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+
+        <a class="hero__content-cta" href="#"> Learn more</a>
+
+        <ul class="client__list">
+          <li class="client__list-item">
+            <img src="./images/client-databiz.svg" alt="databiz" />
           </li>
-          <li><a class="navigation-item" href="#">Careers</a></li>
-          <li><a class="navigation-item" href="#">About</a></li>
+          <li class="client__list-item">
+            <img src="./images/client-audiophile.svg" alt="audiophile" />
+          </li>
+          <li class="client__list-item">
+            <img src="./images/client-meet.svg" alt="meet" />
+          </li>
+          <li class="client__list-item">
+            <img src="./images/client-maker.svg" alt="maker" />
+          </li>
         </ul>
-      </nav>
-    </div>
+      </article>
+      <div class="image-container">
+        <img
+          class="image-hero"
+          src="images/image-hero-desktop.png"
+          alt="remote work"
+        />
+      </div>
+    </section>
 
-    <div class="header__cta">
-      <a href="#">Login</a>
-      <a href="#" class="border-2 padding-10-15 radius-15">Register</a>
-    </div>
-  </header>
-
-  <section class="container info">
-    <article class="hero__content">
-      <h2 class="hero__content-title"><span class="full-block">Make</span> remote work</h2>
-
-     <p class="hero__content-message"> Get your team in sync, no matter your location. Streamline processes, 
-      create team rituals, and watch productivity soar.</p>
-    
-     <a class="hero__content-cta" href="#"> Learn more</a>
-
-      <ul class="client__list">
-        <li class="client__list-item"><img src="./images/client-databiz.svg" alt="databiz"></li>
-        <li class="client__list-item"><img src="./images/client-audiophile.svg" alt="audiophile"></li>
-        <li class="client__list-item"><img src="./images/client-meet.svg" alt="meet"></li>
-        <li class="client__list-item"><img src="./images/client-maker.svg" alt="maker"></li>
-      </ul>
-    </article>
-    <div class="image-container">
-      <img class="image-hero" src="images/image-hero-desktop.png" alt="remote work">
-    </div>
-  </section>
-
-  <script src="./app.js"></script>
-</body>
+    <script src="./app.js" defer></script>
+  </body>
 </html>
